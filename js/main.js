@@ -1,6 +1,11 @@
 // ============================================================
 // ISHVARYA HOSPITALITY SOLUTIONS — Main JavaScript
 // ============================================================
+import { inject } from '@vercel/analytics';
+import { injectSpeedInsights } from '@vercel/speed-insights';
+
+inject();
+injectSpeedInsights();
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
