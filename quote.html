@@ -6,7 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Request a Quote — Ishvarya Hospitality Solutions</title>
     <meta name="description"
-        content="Request a custom quote for bulk hotel amenities, bed & bath linen, and housekeeping products. Fast response, competitive pricing." />
+        content="Request a custom quote for bulk hotel amenities, bed &amp; bath linen, and housekeeping products. Fast response, competitive pricing." />
+
+    <!-- SEO -->
+    <link rel="canonical" href="https://ishvaryahospitality.com/quote" />
+    <meta name="theme-color" content="#b8860b" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Request a Quote — Ishvarya Hospitality Solutions" />
+    <meta property="og:description"
+        content="Get a custom quote for bulk hotel amenities, bed & bath linen, and housekeeping products. Fast response, competitive pricing." />
+    <meta property="og:url" content="https://ishvaryahospitality.com/quote" />
+    <meta property="og:image" content="https://ishvaryahospitality.com/images/og-image.jpg" />
+    <meta property="og:site_name" content="Ishvarya Hospitality Solutions" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Request a Quote — Ishvarya Hospitality Solutions" />
+    <meta name="twitter:description"
+        content="Get a custom quote for bulk hotel amenities, linen, and housekeeping products." />
+    <meta name="twitter:image" content="https://ishvaryahospitality.com/images/og-image.jpg" />
+    <meta name="robots" content="index, follow" />
+
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
 </head>
@@ -87,7 +105,8 @@
                     <div
                         style="margin-top:var(--space-xl); padding:var(--space-lg); background:var(--light-gray); border-radius:var(--radius-md);">
                         <p style="font-size:0.92rem; color:var(--text-dark); margin-bottom:var(--space-sm);">
-                            <strong>Prefer to contact us directly?</strong></p>
+                            <strong>Prefer to contact us directly?</strong>
+                        </p>
                         <p style="font-size:0.88rem;">
                             📞 <a href="tel:+919487519401" style="color:var(--gold); font-weight:500;">+91 94875
                                 19401</a><br />
@@ -102,9 +121,10 @@
                     <h3>Fill in Your Requirements</h3>
                     <div class="form-message" id="quoteFormMessage"></div>
                     <form id="quoteForm">
-                        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+                        <input type="hidden" name="access_key" value="e7dc22b1-d1ee-4b8c-b756-a543c227d876" />
                         <input type="hidden" name="subject" value="New Quote Request — Ishvarya Hospitality" />
                         <input type="hidden" name="from_name" value="Ishvarya Website Quote Form" />
+                        <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="quoteName">Full Name *</label>
@@ -213,7 +233,7 @@
         </svg>
     </a>
 
-    <script src="/js/main.js"></script>
+    <script type="module" src="/js/main.js"></script>
 </body>
 
 </html>
