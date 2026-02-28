@@ -28,11 +28,13 @@ function initNavbar() {
 function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    if (!hamburger || !navLinks) return;
+    const navbar = document.querySelector('.navbar');
+    if (!hamburger || !navLinks || !navbar) return;
 
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
+        navbar.classList.toggle('menu-open');
         document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     });
 
@@ -41,6 +43,7 @@ function initMobileMenu() {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
+            navbar.classList.remove('menu-open');
             document.body.style.overflow = '';
         });
     });

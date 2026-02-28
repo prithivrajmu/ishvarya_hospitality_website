@@ -729,6 +729,13 @@ p {
   margin-bottom: var(--space-sm);
 }
 
+.product-category-card-body .emoji img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
 .product-category-card-body h3 {
   margin-bottom: var(--space-sm);
 }
@@ -772,6 +779,13 @@ p {
 
 .product-section-header .emoji {
   font-size: 2.5rem;
+}
+
+.product-section-header .emoji img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
 }
 
 .product-section-header h2 {
@@ -944,6 +958,14 @@ p {
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
+  overflow: hidden;
+}
+
+.why-card .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-md);
 }
 
 .why-card h4 {
@@ -1577,31 +1599,53 @@ select.form-control {
     padding: var(--space-3xl) 0;
   }
 
-  /* ===== MOBILE MENU — Full-screen solid drawer ===== */
-  .nav-links {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--deep-blue);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-lg);
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(100%);
-    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
-    padding: var(--space-2xl);
+  /* ===== MOBILE MENU — Navbar transforms to full-screen overlay ===== */
+
+  /* When menu is open, the NAVBAR ITSELF becomes the full-screen overlay */
+  .navbar.menu-open {
+    background: var(--deep-blue) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    height: 100vh !important;
+    height: 100dvh !important;
   }
 
+  .navbar.menu-open .container {
+    flex-direction: column;
+    height: 100%;
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-2xl);
+  }
+
+  /* Keep the logo row at top */
+  .navbar.menu-open .nav-logo {
+    align-self: flex-start;
+  }
+
+  .navbar.menu-open .nav-logo-text {
+    color: var(--white);
+  }
+
+  .navbar.menu-open .nav-logo-text span {
+    color: var(--gold-light);
+  }
+
+  /* Nav links hidden by default on mobile */
+  .nav-links {
+    display: none;
+  }
+
+  /* Nav links shown as centered column when menu is open */
   .nav-links.active {
     display: flex;
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    flex: 1;
+    width: 100%;
   }
 
   .nav-links a {
@@ -1617,7 +1661,7 @@ select.form-control {
   }
 
   .nav-links a:hover,
-  .nav-links a.active {
+  .nav-links a.active-link {
     color: var(--deep-blue);
     background: linear-gradient(135deg, var(--gold), var(--gold-light));
     border-color: var(--gold);
@@ -1646,11 +1690,7 @@ select.form-control {
     display: flex;
   }
 
-  .hamburger.active {
-    z-index: 1001;
-  }
-
-  .hamburger.active span {
+  .navbar.menu-open .hamburger span {
     background: var(--white);
   }
 
