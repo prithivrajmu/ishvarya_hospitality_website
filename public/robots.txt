@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ishvaryahospitality.com/sitemap.xml
+Sitemap: https://ishvaryahospitality.in/sitemap.xml
